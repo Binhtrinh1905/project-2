@@ -1,0 +1,113 @@
+extends layouts/default.pug
+include mixins/product-item.pug
+block title 
+    title Chi tiết sản phẩm
+block main
+    //- Section-6
+    .section-6 
+        .container 
+            .section-6__wrap 
+                .section-6__images
+                    .section-6__image-main 
+                        img(src="./assets/img/section-6 img-1.jpg", alt="")
+                    .section-6__image-crumb 
+                        img(src="./assets/img/section-6 img-2.jpg", alt="")
+                        img(src="./assets/img/section-6 img-3.jpg", alt="")
+                        img(src="./assets/img/section-6 img-4.jpg", alt="")
+                        img(src="./assets/img/section-6 img-5.jpg", alt="")
+                        img(src="./assets/img/section-6 img-6.jpg", alt="")    
+                .section-6__content
+                    .breadcrumb
+                        .container 
+                            nav.breadcrumb__wrap 
+                                ul 
+                                    li 
+                                        a(href="#") Trang chủ
+                                    li 
+                                        a(href="#") Chó
+                                    li 
+                                        a(href="#") Chó nhỏ   
+                                    li 
+                                        a(href="#") Shiba Inu Màu Nâu Đỏ
+                    h1.section-6__title Shiba Inu Màu Nâu Đỏ
+                    .section-6__price 12.000.000 VND
+                    .section-6__buttons 
+                        a(href="#" class="button") Liên hệ
+                        a(href="#" class="button-outline button-outline--left")
+                            i(class="fa-regular fa-message ")
+                            |    Chat với Monito
+                    .section-6__table 
+                        table 
+                            tbody 
+                                tr 
+                                    td SKU 
+                                    td #1000078
+                                tr 
+                                    td Giống
+                                    td Cái
+                                tr 
+                                    td Tuổi
+                                    td 2 tháng
+                                tr 
+                                    td Kích thước
+                                    td Nhỏ
+                                tr 
+                                    td Màu sắc
+                                    td Nâu đỏ
+                                tr 
+                                    td Mô tả ngắn
+                                    td Giống thuần chủng Shih Tzu. Cấu trúc cơ thể tốt. Với chứng chỉ MKA và Microchip. Cha từ dòng dõi vô địch.
+                    .box-share 
+                        .box-share__label
+                            i(class="fa-solid fa-share-nodes")
+                            |   Chia sẻ:
+                        .box-share__socials 
+                            i( class="fa-brands fa-facebook")
+                            i(class="fa-brands fa-twitter")
+                            i( class="fa-brands fa-instagram")
+                            i(class="fa-brands fa-youtube")
+    //- End Section-6
+    -
+        var pets =[
+            {
+                image: './assets/img/section-2 product-1.png',
+                title: 'MO231 - Pomeranian Trắng',
+                gender: 'Đực',
+                age: '02 tháng',
+                price: '6.900.000 VND'
+            },
+            {
+                image: './assets/img/section-2 product-2.jpg',
+                title: 'MO502 - Poodle Tiny Vàng',
+                gender: 'Cái',
+                age: '02 tháng',
+                price: '3.900.000 VND'
+            },
+            {
+                image: './assets/img/section-2 product-3.jpg',
+                title: ' MO102 - Poodle Tiny Sepia',
+                gender: 'Đực',
+                age: '02 tháng',
+                price: '4.000.000 VND'
+            },
+            {
+                image: './assets/img/section-2 product-4.jpg',
+                title: 'MO512 - Alaskan Malamute',
+                gender: 'Đực',
+                age: '03 tháng',
+                price: '8.900.000 VND'
+            }
+        ]
+    //- Section-2
+    .section-2
+        .container
+            //- Box-head
+            .box-head
+                .box-head__left
+                    h3.box-head__sub-title Có gì mới?
+                    h2.box-head__title một số vật nuôi của chúng tôi
+            //- Inner-wrap
+            .section-2__wrap
+                each pet in pets
+                    +product-item(pet)
+    //- End Section-2
